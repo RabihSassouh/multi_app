@@ -11,7 +11,7 @@ const StickyContainer = ({ id, text, deleteNote, editNote }) => {
     setEditing(true);
   };
   const handleSave = () => {
-    setEdited(id, edited);
+    editNote(id, edited);
     setEditing(false);
   };
 
