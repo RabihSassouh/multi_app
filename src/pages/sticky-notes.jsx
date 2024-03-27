@@ -4,10 +4,14 @@ import StickyContainer from "../components/stickycontainer";
 const StickyNotes = () => {
   const [notes, setNotes] = useState([]);
   const [id, setId] = useState(0);
+  const [newNote, setNewNote] = useState("");
 
   const addNote = () => {
-    setNotes([...notes, { id: id, text: "" }]);
-    setId(id + 1);
+    if (newNote.length !== 0) {
+      setNotes([...notes, { id: id, text: newNote }]);
+      setId(id + 1);
+      setNewNote("");
+    }
   };
 
   const deleteNote = (id) => {
@@ -22,7 +26,12 @@ const StickyNotes = () => {
 
   return (
     <div>
-      <input type="text" placeholder="Add new note" />
+      <input
+        type="text"
+        placeholder="Add new note"
+        value={newNote}
+        onChange={(e) => setNewNote(e.target.value)}
+      />
       <button onClick={addNote}>Add Note</button>
       <div>
         {notes.map((note) => (
