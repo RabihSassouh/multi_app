@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import './Calculator.css';
+import "../styles/calculator.css";
 
 const Calculator = () => {
   const [expression, setExpression] = useState('');
@@ -28,15 +28,15 @@ const Calculator = () => {
 
   return (
     <div className="calculator" tabIndex="0" onKeyDown={handleKeyPress}>
-      <input type="text" value={expression} readOnly />
-      <div className="buttons">
-        {['0','1', '2', '3', '4', '5', '6', '7', '8', '9', '+','-', '*', '/', '=','.', 'c'].map((button) => (
-          <button key={button} onClick={() => handleInput(button)}>
-            {button}
-          </button>
-        ))}
-      </div>
+    <input className="input" type="text" value={expression} readOnly />
+    <div className="buttons">
+      {['0','1', '2', '3', '4', '5', '6', '7', '8', '9', '+','-', '*', '/', '=','.', 'c'].map((button) => (
+        <button key={button} onClick={() => handleInput(button)} className={button === '=' ? 'equal' : button === 'c' ? 'clear' : button === '.' ? 'dot' : 'operator'}>
+          {button}
+        </button>
+      ))}
     </div>
+  </div>
   );
 };
 
