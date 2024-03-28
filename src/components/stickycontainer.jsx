@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+// import Draggable from "react-draggable";
+// import { Resizable } from "react-resizable";
 
 const StickyContainer = ({ id, text, deleteNote, editNote }) => {
   const [editing, setEditing] = useState(false);
