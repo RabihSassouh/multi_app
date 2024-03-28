@@ -1,0 +1,48 @@
+.weather-app {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .weather-header {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .section1 {
+    margin-bottom: 20px;
+  }
+  
+  .input-container {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 200px;
+    font-size: 16px;
+  }
+  
+  .input-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .section2 {
+    margin-top: 30px;
+  }
+  
+  .section2-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .days-container {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }

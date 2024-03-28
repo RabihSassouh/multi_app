@@ -1,48 +1,46 @@
-import React, { useState } from "react";
-// import Draggable from "react-draggable";
-// import { Resizable } from "react-resizable";
+// import React, { useState } from "react";
 
-const StickyContainer = ({ id, text, deleteNote, editNote }) => {
-  const [editing, setEditing] = useState(false);
-  const [edited, setEdited] = useState(text);
+// const StickyContainer = ({ id, text, deleteNote, editNote }) => {
+//   const [editing, setEditing] = useState(false);
+//   const [edited, setEdited] = useState(text);
 
-  const handleDelete = () => {
-    deleteNote(id);
-  };
-  const handleEdit = () => {
-    setEditing(true);
-  };
-  const handleSave = () => {
-    editNote(id, edited);
-    setEditing(false);
-  };
+//   const handleDelete = () => {
+//     deleteNote(id);
+//   };
+//   const handleEdit = () => {
+//     setEditing(true);
+//   };
+//   const handleSave = () => {
+//     editNote(id, edited);
+//     setEditing(false);
+//   };
 
-  return (
-    <div>
-      {/* <div>
-        defaultSize={{ width: 200, height: 200 }}
-        minWidth={100}
-        minHeight={100}
-        maxHeight={500}
-        maxWidth={500}
-      </div> */}
-      <div>
-        <p>{text}</p>
+//   return (
+//     <div>
+//       {/* <div>
+//         defaultSize={{ width: 200, height: 200 }}
+//         minWidth={100}
+//         minHeight={100}
+//         maxHeight={500}
+//         maxWidth={500}
+//       </div> */}
+//       <div>
+//         <p>{text}</p>
 
-        <button onClick={handleEdit}>Edit</button>
-        <button onClick={handleDelete}>Delete</button>
-      </div>
-      {editing && (
-        <div>
-          <textarea
-            value={edited}
-            onChange={(e) => setEdited(e.target.value)}
-          />
-          <button onClick={handleSave}>Save</button>
-        </div>
-      )}
-    </div>
-  );
-};
+//         <button onClick={handleEdit}>Edit</button>
+//         <button onClick={handleDelete}>Delete</button>
+//       </div>
+//       {editing && (
+//         <div>
+//           <textarea
+//             value={edited}
+//             onChange={(e) => setEdited(e.target.value)}
+//           />
+//           <button onClick={handleSave}>Save</button>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
 
-export default StickyContainer;
+// export default StickyContainer;
