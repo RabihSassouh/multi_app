@@ -5,8 +5,8 @@ import Weather from './pages/weather';
 
 function App() {
     return(
-      // <StickyNotes/>
-      <Weather/>
+      <StickyNotes/>
+      // <Weather/>
     )
 
 }
