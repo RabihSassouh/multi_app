@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import Draggable from "react-draggable";
 
-import ("../styles/sticky-notes.css");
+import "../styles/sticky-notes.css";
 
-const StickyContainer = ({ id, text, deleteNote, editNote }) => {
+const StickyContainer = ({ id, text, deleteNote, editNote, className }) => {
   const [editing, setEditing] = useState(false);
   const [edited, setEdited] = useState(text);
 
@@ -17,8 +18,9 @@ const StickyContainer = ({ id, text, deleteNote, editNote }) => {
     setEditing(false);
   };
 
+  
   return (
-    <div>
+    <div className={className}>
       {/* <div>
         defaultSize={{ width: 200, height: 200 }}
         minWidth={100}
@@ -26,11 +28,20 @@ const StickyContainer = ({ id, text, deleteNote, editNote }) => {
         maxHeight={500}
         maxWidth={500}
       </div> */}
-      <div className="note-container">
+      {/* <Draggable  onDrag={handleDrag}>
+        {(props) => {
+          console.log("Props:", props);
+        }}
+      </Draggable> */}
+      <div className="noteContainer">
         <p>{text}</p>
 
-        <button onClick={handleEdit} className="edit-button">Edit</button>
-        <button onClick={handleDelete} className="delete-button">Delete</button>
+        <button onClick={handleEdit} className="edit-button">
+          Edit
+        </button>
+        <button onClick={handleDelete} className="delete-button">
+          Delete
+        </button>
       </div>
       {editing && (
         <div className="edit-container">
@@ -39,7 +50,9 @@ const StickyContainer = ({ id, text, deleteNote, editNote }) => {
             onChange={(e) => setEdited(e.target.value)}
             className="edit-text"
           />
-          <button onClick={handleSave} className="save-button">Save</button>
+          <button onClick={handleSave} className="save-button">
+            Save
+          </button>
         </div>
       )}
     </div>
