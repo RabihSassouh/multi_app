@@ -27,6 +27,7 @@ const Calculator = () => {
   };
 
   return (
+    <div className='bg-img'>
     <div className="calculator" tabIndex="0" onKeyDown={handleKeyPress}>
     <input className="input" type="text" value={expression} readOnly />
     <div className="buttons">
@@ -36,6 +37,7 @@ const Calculator = () => {
         </button>
       ))}
     </div>
+  </div>
   </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/home.css";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -17,15 +18,11 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <h1>Welcome to multi app</h1>
-      <div>
+    <div className="home-container">
+      <h1 className="home-title">Welcome to multi app</h1>
+      <div className="home-buttons">
         <button onClick={goToWeather}>Weather forecast</button>
-      </div>
-      <div>
         <button onClick={goToCalculator}>Calculator</button>
-      </div>
-      <div>
         <button onClick={goToStickyNotes}>Sticky notes</button>
       </div>
     </div>

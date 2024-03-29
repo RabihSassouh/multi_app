@@ -40,13 +40,21 @@ function Weather() {
         <button onClick={handleSeeWeather} className="input-button">See Weather</button>
       </div>
       {weather && (
-        <div className="section2">
-          <h2 className="section2-title">Forecast for the next 3 days</h2>
+        
+          <div className="section2">
+            {/* <h2 className="section2-title">Forecast for the next 3 days</h2> */}
+                      
           {weather.timelines.daily.slice(0, 3).map((dailyForecast, index) => (
             <div key={index} className="days-container">
               <h3 className="each-day">Day {index + 1}</h3>
               <p className="temp">Temperature: {dailyForecast.values.temperatureAvg}°C</p>
-              <p className="weather">Weather: {dailyForecast.values.weatherCode}</p>
+              <p className="max-temp">Max temperature: {dailyForecast.values.temperatureMax}</p>
+              <p className="min-temp">Min temperature: {dailyForecast.values.temperatureMin}</p>
+              <p className="wind-speed">Wind speed: {dailyForecast.values.windSpeedAvg}</p>
+              <p className="humidity">Humidity: {dailyForecast.values.humidityAvg}</p>
+              <p className="sun-rise">Sun rise-time: {dailyForecast.values.sunriseTime}</p>
+              <p className="moon-rise">Moon rise-time: {dailyForecast.values.moonriseTime}</p>
+            
             </div>
           ))}
         </div>
